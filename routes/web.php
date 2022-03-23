@@ -14,17 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/', 'home');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/home', [HomeController::class, 'home'])
-->middleware(['auth'])->name('home');
+Route::get('/home', [HomeController::class, 'home'])->name('home');
 Route::get('/how_to_publish', [HomeController::class, 'aboutApp']);
-Route::view('/about_app', 'pages.how_to_use');
+Route::view('/about', 'pages.how_to_use')->name('about');
 
 require __DIR__.'/auth.php';

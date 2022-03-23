@@ -19,7 +19,7 @@ class ArticleSeeder extends Seeder
      */
     public function run()
     {
-        Article::factory(50)
+        Article::factory(30)
             ->create();
         // Get all tags
         $tags = Tag::all();
@@ -27,7 +27,7 @@ class ArticleSeeder extends Seeder
 // Populate the pivot table
         Article::all()->each(function ($article) use ($tags) {
             $article->tags()->attach(
-                $tags->random(rand(1, 3))->pluck('id')->toArray()
+                $tags->random(rand(1, 5))->pluck('id')->toArray()
             );
         });
     }

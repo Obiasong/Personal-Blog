@@ -36,7 +36,7 @@
                                     <td style="border: solid"><img src="{{ asset('articles/'.$post->image) }}" /></td>
                                     @else
                                     <td style="border: solid"><img src="{{ asset('storage/avatar.jpeg') }}" alt="" style="width: 100px; height: 100px" title="article cover image" /></td>
-                                    @endif                           
+                                    @endif
                                     <td style="border: solid">{{ $post->created_at }}</td>
                                 </tr>
                             @empty
@@ -45,7 +45,7 @@
                                 </tr>
                             @endforelse
                             </tbody>
-                        </table>
+                        </table><br/>
                         {{ $articles->links() }}
                 </div>
             </div>
