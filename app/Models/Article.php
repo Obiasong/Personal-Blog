@@ -9,10 +9,10 @@ class Article extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'full_text', 'image', 'category_id'];
+    protected $fillable = ['title', 'full_text', 'image', 'category_id', 'user_id'];
 
     public function category(){
-        $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class);
     }
 
     public function user(){
@@ -20,6 +20,6 @@ class Article extends Model
     }
 
     public function tags(){
-        $this->belongsToMany(Tag::class, 'article_tag', 'article_id', 'tag_id');
+        return $this->belongsToMany(Tag::class, 'article_tag', 'article_id', 'tag_id');
     }
 }

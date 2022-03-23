@@ -12,6 +12,6 @@ class Tag extends Model
     protected $fillable = ['name'];
 
     public function articles(){
-        $this->belongsToMany(Article::class, 'article_tag', 'tag_id', 'article_id');
+        return $this->belongsToMany(Article::class, 'article_tag', 'tag_id', 'article_id');
     }
 }
