@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
+use App\Http\Controllers\Admin\TagsController as AdminTagsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +23,11 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::get('/home', [HomeController::class, 'home'])->name('home');
-Route::get('/how_to_publish', [HomeController::class, 'aboutApp']);
 Route::view('/about', 'pages.how_to_use')->name('about');
+
+Route::group(['middleware'=>'auth', 'prefix'=>'admin', 'as'=>'admin/'], function(){
+    Route::resource('category', AdminCategoryController::class);
+    Route::resource('tag', AdminTagsController::class);
+});
 
 require __DIR__.'/auth.php';
