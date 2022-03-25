@@ -12,7 +12,7 @@
                 <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                     {{ __('List of Articles') }}
                 </h2><br/>
-                        <table class="border" style="border: solid">
+                        <table class="w-full" style="border: solid">
                             <thead>
                             <tr style="border: solid">
                                 <th style="border: solid">@lang('blog/article.title')</th>
@@ -33,7 +33,7 @@
                                     @endforeach
                                     </td>
                                     @if($post->image != "")
-                                    <td style="border: solid"><img src="{{ asset('articles/'.$post->image) }}" /></td>
+                                    <td style="border: solid"><img src="{{ asset('article/'.$post->image) }}" /></td>
                                     @else
                                     <td style="border: solid"><img src="{{ asset('storage/avatar.jpeg') }}" alt="" style="width: 100px; height: 100px" title="article cover image" /></td>
                                     @endif

@@ -24,7 +24,9 @@ class StoreArticleRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required|unique:articles|max:255',
+            'article' => 'required',
+            'image' => 'nullable|file',
         ];
     }
 }

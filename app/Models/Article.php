@@ -16,10 +16,15 @@ class Article extends Model
     }
 
     public function user(){
-        $this->belongsTo(User::class);
+        return $this->belongsTo(User::class);
     }
 
     public function tags(){
         return $this->belongsToMany(Tag::class, 'article_tag', 'article_id', 'tag_id');
     }
+
+    public function getImage(){
+        return $this->image;
+    }
+
 }

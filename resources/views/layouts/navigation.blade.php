@@ -21,6 +21,21 @@
                         {{ __('blog/article.how_to_use') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('admin/category.index')" :active="request()->routeIs('admin/category')">
+                        {{ __('Manage Categories') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('admin/article.index')" :active="request()->routeIs('admin/article')">
+                        {{ __('Manage Articles') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('admin/tag.index')" :active="request()->routeIs('admin/tag')">
+                        {{ __('Manage Tags') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->
